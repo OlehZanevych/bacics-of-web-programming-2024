@@ -34,3 +34,9 @@ switch (value) {
     default:
         console.log('It is default case');
 }
+
+console.log(null == undefined);
+console.log(null === undefined);
+
+const notSetdValue = undefined
+console.log(notSetdValue == null);
