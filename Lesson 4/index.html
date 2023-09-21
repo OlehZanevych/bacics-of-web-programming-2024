@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS / DOM</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="js/main.js"></script>
+</head>
+<body>
+
+<main>
+    <form class="user-form">
+        <label for="first-name">First name:</label><input id="first-name" type="text">
+        <label for="middle-name">Middle name:</label><input id="middle-name" type="text">
+        <label for="last-name">Last name:</label><input id="last-name" type="text">
+        <label for="profile-photo"></label><img id="profile-photo" src="" alt="Photo not set"/>
+        <input type="file" onchange="readProfilePhoto(this)">
+
+        <button type="button" onclick="addUser()">Add user</button>
+    </form>
+
+    <section id="users"></section>
+</main>
+
+</body>
+</html>

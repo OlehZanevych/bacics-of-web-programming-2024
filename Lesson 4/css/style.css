@@ -1,0 +1,14 @@
+.user-form {
+    display: grid;
+    grid-template-columns: 150px minmax(300px, auto);
+    grid-gap: 20px;
+}
+
+.user-form label {
+    grid-column: 1;
+    font-weight: 600;
+}
+
+.user-form input {
+    grid-column: 2;
+}
