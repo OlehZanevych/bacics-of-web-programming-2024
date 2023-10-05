@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example of bubbling phase</title>
+
+  <style>
+    body * {
+      margin: 20px;
+      border: 1px solid blue;
+    }
+  </style>
+</head>
+<body onclick="console.log('Body')">
+
+<div onclick="console.log('Parent block')">Parent block
+  <div onclick="console.log('Block')">Block
+    <p onclick="console.log('Paragraph')">Paragraph</p>
+  </div>
+</div>
+
+</body>
+</html>

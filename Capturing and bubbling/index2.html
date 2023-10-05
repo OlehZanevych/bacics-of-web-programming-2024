@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example of both capturing and bubbling phases</title>
+
+    <style>
+        body * {
+            margin: 80px;
+            border: 4px solid blue;
+            font-size: 20px;
+        }
+
+        #paragraph {
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="parent-block">Parent block
+    <div id="block">Block
+        <p id="paragraph">Paragraph</p>
+    </div>
+</div>
+
+<script>
+    const bodyCapturingHandle = () => {
+        console.log('Body Capturing');
+    }
+    const bodyBubblingHandle = () => {
+        console.log('Body Bubbling');
+    }
+
+    const parentBlockCapturingHandle = () => {
+        console.log('Parent block Capturing');
+    }
+    const parentBlockBubblingHandle = () => {
+        console.log('Parent block Bubbling');
+    }
+
+    const blockCapturingHandle = e => {
+        console.log('Block Capturing');
+        e.stopPropagation();
+    }
+    const blockBubblingHandle = () => {
+        console.log('Block Bubbling');
+    }
+
+    const blockBubblingHandle2 = () => {
+        console.log('Block Bubbling 2');
+    }
+
+    const blockBubblingHandle3 = () => {
+        console.log('Block Bubbling 3');
+    }
+
+    const paragraphCapturingHandle = e => {
+        console.log('Paragraph Capturing');
+        // e.stopPropagation();
+        // e.stopImmediatePropagation();
+    }
+    const paragraphBubblingHandle = e => {
+        console.log('Paragraph Bubbling');
+        // e.stopPropagation();
+        // e.stopImmediatePropagation();
+    }
+
+    const paragraphBubblingHandle2 = () => {
+        console.log('Paragraph Bubbling 2');
+    }
+
+    const paragraphBubblingHandle3 = () => {
+        console.log('Paragraph Bubbling 3');
+    }
+
+    const parentBlockElem = document.getElementById('parent-block');
+    const blockElem = document.getElementById('block');
+    const paragraphElem = document.getElementById('paragraph');
+
+    document.body.addEventListener('click', bodyCapturingHandle, true);
+    document.body.addEventListener('click', bodyBubblingHandle);
+
+    parentBlockElem.addEventListener('click', parentBlockCapturingHandle, true);
+    parentBlockElem.addEventListener('click', parentBlockBubblingHandle);
+
+    blockElem.addEventListener('click', blockCapturingHandle, true);
+    blockElem.addEventListener('click', blockBubblingHandle2);
+    blockElem.addEventListener('click', blockBubblingHandle);
+    blockElem.addEventListener('click', blockBubblingHandle3);
+
+    paragraphElem.addEventListener('click', paragraphCapturingHandle, true);
+    paragraphElem.addEventListener('click', paragraphBubblingHandle);
+    paragraphElem.addEventListener('click', paragraphBubblingHandle2);
+    paragraphElem.addEventListener('click', paragraphBubblingHandle3);
+</script>
+
+</body>
+</html>
