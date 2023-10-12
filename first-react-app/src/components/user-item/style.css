@@ -1,0 +1,12 @@
+.user_item__text,
+user_item__mumber {
+    display: inline-block;
+}
+
+.user_item__text {
+    width: 25%;
+}
+
+.user_item__number {
+    width: 10%;
+}
