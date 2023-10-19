@@ -1,21 +1,10 @@
 import UserItem from "../user-item";
-
-const users = [{
-    firstName: 'Ivan',
-    lastName: 'Shevchenko',
-    age: 47
-}, {
-    firstName: 'Maria',
-    lastName: 'Kovalisko',
-    age: 27
-}, {
-    firstName: 'Anton',
-    lastName: 'Hnatuk',
-    age: 20
-}]
+import {useDataStorageContext} from "../context/data-storage-context";
 
 const Users = () => {
-    const userItems = users.map((user, index) => <UserItem key={index} userData={user}/>)
+    const {state: {users}} = useDataStorageContext();
+
+    const userItems = Object.entries(users).map(([userId, user]) => <UserItem key={userId} userData={user}/>)
 
     return (
         <>
