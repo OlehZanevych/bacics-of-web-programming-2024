@@ -1,9 +1,12 @@
 import './App.css';
 import MainPage from "./components/main-page";
+import DataStorageProvider from "./components/context/data-storage-context";
 
 function App() {
   return (
-    <MainPage/>
+      <DataStorageProvider>
+        <MainPage/>
+      </DataStorageProvider>
   );
 }
 
