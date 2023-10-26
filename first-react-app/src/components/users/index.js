@@ -4,7 +4,7 @@ import {useDataStorageContext} from "../context/data-storage-context";
 const Users = () => {
     const {state: {users}} = useDataStorageContext();
 
-    const userItems = Object.entries(users).map(([userId, user]) => <UserItem key={userId} userData={user}/>)
+    const userItems = Object.entries(users).map(([userId, user]) => <UserItem key={userId} userId={userId} userData={user}/>)
 
     return (
         <>

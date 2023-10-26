@@ -6,6 +6,7 @@ const Menu = () => (
         <ul>
             <li><Link to='/'>All Users</Link></li>
             <li><Link to='/add-user'>Add new User</Link></li>
+            <li><Link to='/departments'>Departments</Link></li>
         </ul>
     </div>
 );
