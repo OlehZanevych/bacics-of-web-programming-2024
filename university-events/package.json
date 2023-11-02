@@ -1,0 +1,14 @@
+{
+  "name": "university-events",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node src/index.js",
+    "local:dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "3.0.1"
+  }
+}
