@@ -12,7 +12,7 @@ const create = async (req, res) => {
 
     const [{id}] = await eventRepository.createEvent(event);
 
-    event.id = id;
+    event.id = +id;
 
     res.status(201).send(event);
 }

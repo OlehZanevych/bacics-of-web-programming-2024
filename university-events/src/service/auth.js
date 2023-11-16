@@ -9,8 +9,6 @@ const AUTH_TOKEN_HEADER = "Authorization";
 const TOKEN_PREFIX = "Bearer";
 const TOKEN_EXPIRATION_TIME = 15 * 60;
 
-const salt = bcrypt.genSaltSync(10);
-
 const authorizeUser = (req, res, next) => {
     const authHeader = req.header(AUTH_TOKEN_HEADER);
 
@@ -67,6 +65,7 @@ const signIn = async (req, res) => {
 const signUp = async (req, res) => {
     const user = req.body;
 
+    const salt = bcrypt.genSaltSync(10);
     user.passwordHash = bcrypt.hashSync(user.password, salt);
 
     try {
